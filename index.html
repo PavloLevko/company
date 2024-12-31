@@ -3,178 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка піци, кебабу та суші</title>
+    <title>Масажні Послуги</title>
     <style>
-        /* Основні стилі */
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Чорний фон */
+            color: #fff; /* Білий текст */
         }
-
         header {
-            background-color: #FFD700; /* Жовтий */
+            background: url('https://propelphysiotherapy.com/wp-content/uploads/2023/06/benefits-of-swedish-massage-propel-physiotherapy.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 20px 10px;
+            padding: 100px 20px;
+            font-size: 2.5rem;
+            position: relative;
         }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            color: white;
-            padding: 10px;
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            font-weight: bold;
+        header h1 {
+            position: relative;
+            z-index: 2;
         }
-
-        nav a:hover {
-            background-color: #FFD700; /* Жовтий */
-            border-radius: 5px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .services, .gallery {
             padding: 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h1, h2 {
             text-align: center;
-            color: #FFD700; /* Жовтий */
         }
-
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        .services h2, .gallery h2 {
+            margin-bottom: 20px;
+            color: #ff9800; /* Помаранчевий заголовок */
         }
-
-        .menu-item {
-            border: 1px solid #ddd;
+        .price-item {
+            margin: 15px auto;
+            padding: 15px;
+            background: #333; /* Темно-сірий фон для елементів */
+            border: 1px solid #555; /* Сіра рамка */
+            border-radius: 8px;
+            width: 60%;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
             border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
-
-        .menu-item:hover {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
-
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        .gallery-item h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            margin: 0;
+            padding: 10px;
+            font-size: 1.2rem;
         }
-
-        .menu-item h3 {
-            margin: 10px 0;
-        }
-
-        .menu-item p {
-            color: #777;
-        }
-
-        .menu-item .price {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 10px 0;
-            color: #FFD700; /* Жовтий */
-        }
-
         footer {
+            margin-top: 20px;
+            padding: 10px 0;
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
         }
-
-        footer a {
-            color: #FFD700; /* Жовтий */
-            text-decoration: none;
+        .contact {
+            font-size: 1.2rem;
+        }
+        .price {
+            font-weight: bold;
+            color: #ff5722; /* Яскравий оранжевий для цін */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка сайту -->
     <header>
-        <h1 style="color: black;">Шаурма </h1>
-        <p>Піца | Кебаб | Суші</p>
+        <h1>Масажні Послуги</h1>
     </header>
-
-    <!-- Навігація -->
-    <nav>
-        <a href="#menu">Меню</a>
-        <a href="#about">Про нас</a>
-        <a href="#contact">Контакти</a>
-    </nav>
-
-    <!-- Основний контент -->
-    <div class="container">
-        <!-- Секція Меню -->
-        <section id="menu">
-            <h2>Наше меню</h2>
-            <div class="menu">
-                <!-- Піца -->
-                <div class="menu-item">
-                    <img src="https://static.1000.menu/res/640/img/content-v2/ef/27/10853/picca-margarita-v-domashnix-usloviyax_1608783820_4_max.jpg" alt="Піца">
-                    <h3>Маргарита</h3>
-                    <p>Томатний соус, моцарела, базилік</p>
-                    <p class="price">139 грн</p>
-                </div>
-                <!-- Кебаб -->
-                <div class="menu-item">
-                    <img src="https://farsh.in.ua/wp-content/uploads/2021/01/Studio-Session-33791-Edit-copy-1-scaled-e1687370058284.jpg" alt="Кебаб">
-                    <h3>Кебаб класичний</h3>
-                    <p>М'ясо на грилі, овочі, соус</p>
-                    <p class="price">119 грн</p>
-                </div>
-                <!-- Суші -->
-                <div class="menu-item">
-                    <img src="https://roll-chuguev.com.ua/wp-content/uploads/2023/02/4.jpg" alt="Суші">
-                    <h3>Філадельфія</h3>
-                    <p>Лосось, вершковий сир, авокадо</p>
-                    <p class="price">520 грн</p>
-                </div>
+    <main>
+        <section class="services">
+            <h2>Прайс</h2>
+            <div class="price-item">
+                <h3>Класичний масаж спини</h3>
+                <p class="price">Ціна: 500 грн</p>
+            </div>
+            <div class="price-item">
+                <h3>Антицелюлітна програма</h3>
+                <p class="price">Ціна: 800 грн</p>
+            </div>
+            <div class="price-item">
+                <h3>Релакс масаж</h3>
+                <p class="price">Ціна: 600 грн</p>
+            </div>
+            <div class="price-item">
+                <h3>Цвяхостояння</h3>
+                <p class="price">Ціна: 1000 грн</p>
             </div>
         </section>
-
-        <!-- Секція Про нас -->
-        <section id="about">
-            <h2>Про нас</h2>
-<p>Ми пропонуємо найсмачнішу піцу, кебаб і суші у Вашому місті. Готуємо лише зі свіжих продуктів та доставляємо їжу швидко та теплою.</p>
+        <section class="gallery">
+            <h2>Наші Послуги</h2>
+            <div class="gallery-item">
+                <img src="https://premium-spa.com.ua/en/assets/img/classic1.jpg" alt="Класичний масаж">
+                <h3>Класичний масаж спини</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="https://premium-spa.com.ua/en/assets/img/classic2.jpg" alt="Антицелюлітна програма">
+                <h3>Антицелюлітна програма</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.touchspa.com.ua/wp-content/uploads/2023/04/gift18-scaled.jpg" alt="Релакс масаж">
+                <h3>Релакс масаж</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="https://grinchenko-inform.kubg.edu.ua/wp-content/uploads/2022/12/gi21943.jpg" alt="Цвяхостояння">
+                <h3>Цвяхостояння</h3>
+            </div>
         </section>
-
-        <!-- Секція Контакти -->
-        <section id="contact">
-            <h2>Контакти</h2>
-            <p><strong>Телефон :</strong> <a href="tel:+380000000000">+38 (000) 0000000</a></p>
-            <p><strong>Адреса:</strong>Вулиця, 1а, Місто, Ваша область, 00000</p>
-            
-        </section>
-    </div>
-
-    <!-- Підвал -->
+    </main>
     <footer>
-        <p>&copy; 2024 Tomash Groupі. Усі права захищені.</p>
-        <p><a href="https://maps.app.goo.gl/VKYqCWd1Rg6aKBen6">Знайти нас на Google Maps</a></p>
+        <div class="contact">
+            <p>Адреса: вул. Здоров'я, 15, Київ</p>
+            <p>Телефон: +380 67 123 45 67</p>
+            <p>Email: massage@example.com</p>
+        </div>
     </footer>
 </body>
 </html>
